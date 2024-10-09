@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Registered Channel Partner</title>
+    <link rel="stylesheet" href="CPStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <div class="logo-frame">
+            <img src="logo.jpg" alt="Company Logo">
+        </div>
+        <h1>Become Our Registered Channel Partner</h1>
+        <form id="recycler-form">
+            <div class="input-group">
+                <label for="registered">Have you already registered?</label>
+                <select id="registered" name="registered" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div id="login-section" class="hidden">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="login-id">User ID:</label>
+                    <input type="text" id="login-id" name="login-id" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </div>
+
+            <div id="register-section" class="hidden">
+                <h2>Register as Recycler</h2>
+                
+                <div class="input-group">
+                    <label for="company">Company Name:</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="input-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="input-group">
+                    <label for="contact-person">Contact Person Name:</label>
+                    <input type="text" id="contact-person" name="contact-person" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Contact Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Document Upload Fields -->
+                <div class="input-group">
+                    <label for="pollution-certificate">Upload Pollution Control Board Certificate:</label>
+                    <input type="file" id="pollution-certificate" name="pollution-certificate" accept=".pdf,.jpg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="gst-certificate">Upload GST Certificate:</label>
+                    <input type="file" id="gst-certificate" name="gst-certificate" accept=".pdf,.jpg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="pan-card">Upload Company PAN Card:</label>
+                    <input type="file" id="pan-card" name="pan-card" accept=".pdf,.jpg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="cancel-cheque">Upload Cancel Cheque:</label>
+                    <input type="file" id="cancel-cheque" name="cancel-cheque" accept=".pdf,.jpg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="green-certificate">Upload Green Certificate Format:</label>
+                    <input type="file" id="green-certificate" name="green-certificate" accept=".pdf,.jpg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="other-docs">Upload Other Documents (if any):</label>
+                    <input type="file" id="other-docs" name="other-docs" accept=".pdf,.jpg,.png" multiple>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const registeredSelect = document.getElementById('registered');
+        const loginSection = document.getElementById('login-section');
+        const registerSection = document.getElementById('register-section');
+
+        registeredSelect.addEventListener('change', function() {
+            if (this.value === 'yes') {
+                loginSection.classList.remove('hidden');
+                registerSection.classList.add('hidden');
+            } else if (this.value === 'no') {
+                registerSection.classList.remove('hidden');
+                loginSection.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
